@@ -4,12 +4,13 @@ let partePrincipalSite = document.createElement("main")
 partePrincipalSite.id = "partePrincipal"
 
 let tituloSite = document.createElement("h1")
-tituloSite.innerHTML = "Virtual Market" 
+tituloSite.innerHTML = "Feira Virtual" 
 partePrincipalSite.appendChild(tituloSite)
 
 let divItemValor = document.createElement("div")
 let itemDiv = document.createElement("span")
 let valorDiv = document.createElement("span")
+divItemValor.id = "itemValor"
 itemDiv.innerHTML = "Item"
 valorDiv.innerHTML = "Valor"
 divItemValor.appendChild(itemDiv)
@@ -29,16 +30,14 @@ function createProduct(imageProduct, idProduct, nameProduct, priceProduct){
     return products
 }
 createProduct("./assets/img/abacate.jpg", 0, "Abacate", "2.50")
-createProduct("./assets/img/banana.jpg", 1, "Palma da Banana", "5.00")
+createProduct("./assets/img/banana.jpg", 1, "Banana", "5.00")
 createProduct("./assets/img/caju.jpg", 2, "Caju", "1.99")
-createProduct("./assets/img/caldocana.jpg", 3, "Caldo de Cana", "3.50")
 createProduct("./assets/img/cebola.jpg", 4, "Cebola", "1.49")
 createProduct("./assets/img/melancia.jpg", 5, "Melancia", "7.00")
-createProduct("./assets/img/melaoamarelo.jpg", 6, "Melão Amarelo", "5.00")
-createProduct("./assets/img/melaolaranja.jpg", 7, "Melão Laranja", "5.50")
-createProduct("./assets/img/pastel.png", 8, "Pastel de Carne", "5.00")
-createProduct("./assets/img/pimenta.jpg", 9, "Pimenta", "0.50")
-createProduct("./assets/img/tomatecomum.jpg", 10, "Tomate Comum", "1.20")
+createProduct("./assets/img/melaoamarelo.jpg", 6, "Melão", "5.00")
+createProduct("./assets/img/pastel.png", 8, "Pastel", "5.00")
+createProduct("./assets/img/pimenta.jpg", 9, "Pimenta", "3.50")
+createProduct("./assets/img/tomatecomum.jpg", 10, "Tomate", "1.20")
 
 let productList  = document.createElement("ul")
 
@@ -65,15 +64,18 @@ function criarCardProduto(produto){
     let tagImge     = document.createElement("img")
     let tagNome     = document.createElement("h2")
     let tagPreco    = document.createElement("span")
+    let tagDiv = document.createElement("div")
 
+    tagDiv.id = "inforProdutos"
     productDetails.id    = idCard
     tagImge.src          = imagemCard
     tagImge.alt          = nomeCard
     tagNome.innerText    = nomeCard
-    tagPreco.innerText   = valorCard
+    tagPreco.innerText   = `R$ ${valorCard}`
 
-    productDetails.appendChild(tagImge)
-    productDetails.appendChild(tagNome)
+    tagDiv.appendChild(tagImge)
+    tagDiv.appendChild(tagNome)
+    productDetails.appendChild(tagDiv)
     productDetails.appendChild(tagPreco)
 
     return productDetails
@@ -96,6 +98,7 @@ let valorFinal = soma(products)
 let divTotal = document.createElement("div")
 let totalTexto = document.createElement("p")
 let totalValor = document.createElement("p")
+divTotal.id = "divTotal"
 totalTexto.innerHTML = "Total"
 totalValor.innerHTML = `R$ ${valorFinal}`
 divTotal.appendChild(totalTexto)

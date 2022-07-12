@@ -1,7 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1{
+    text-align: center;
+    margin: 10px 0px;
+}
+
+#itemValor{
+    background-color: #212529;
+    border: 2px solid #212529;
+    border-radius: 10px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    font-size: 18px;
+    padding: 0px 30px;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    margin: 0 auto;
 }
 
 main ul{
@@ -11,4 +39,51 @@ main ul{
 
 main ul li{
     display: flex;
+    justify-content: space-between;
+    background-color: #f8f9fa;
+    border: 2px solid #f8f9fa;
+    border-radius: 10px;
+    align-items: center;
+    font-size: 18px;
+    margin: 10px 0px;
+    padding: 0px 20px;
+}
+
+#inforProdutos{
+    display: flex;
+    flex-direction: row;
+    width: 70px;
+    align-items: center;
+    font-size: medium;
+    gap: 10px;
+}
+
+img{
+    height: 60px;
+    width: 60px;
+}
+
+#divTotal{
+    background-color: #e9ecef;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: x-large;
+    height: 50px;
+    margin-bottom: 10px;
+    padding: 0px 20px;
+}
+
+button{
+    cursor: pointer;
+    background-color: #20c997;
+    color: #fff;
+    border: 2px solid #20c997;
+    border-radius: 10px;
+    font-size: 18px;
+    height: 50px;
+    width: 100%;
+    margin-bottom: 10px;
 }
