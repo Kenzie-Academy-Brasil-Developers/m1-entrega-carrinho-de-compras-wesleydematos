@@ -3,81 +3,12 @@
     margin: 0;
     padding: 0;
 }
-body{
-    background-color: #ffffff;
-}
-
-header{
-    display: flex;
-    justify-content: space-between;
-    background-color: #212529;
-    color:  #ffffff;
-    height: 60px;
-    font-size: 40px;
-    align-items: center;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-bottom: 10px;
-}
-
-header .logo span{
-    color: #20c997;
-}
-
-.botoes{
-    padding-bottom: 8px;
-} 
-
-header a{
-    text-decoration: none;
-    color: #ffffff;
-    background-color: #20c997;
-    padding: 5px 20px;
-    border: solid 1px #212529;
-    border-radius: 10px;
-    font-size: 30px;
-}
-
-header a:hover{
-    color: #20c997;
-    background-color: #ffffff;
-}
 
 main ul{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    list-style: none;
-}
-
-main ul li{
-    background-color: #ffffff;
-    width: 33%;
-    margin-bottom: 15px;
-    text-align: center;
-    display: flex;
-    align-items: center;
     flex-direction: column;
 }
 
-main ul li img{
-    height: 200px;
-    width: 200px;
-}
-
-main ul li span{
-    cursor: pointer;
-    background-color: #212529;
-    color: #ffffff;
-    padding: 0 15px;
-    border: 1px solid #ffffff;
-    border-radius: 6px;
-}
-
-section h2{
-    text-align: center;
-    color: #ffffff;
-    background-color: #212529;
-    margin-top: 10px;
-    font-size: 40px;
+main ul li{
+    display: flex;
 }

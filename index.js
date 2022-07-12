@@ -2,6 +2,20 @@ let corpoSite = document.querySelector("body")
 
 let partePrincipalSite = document.createElement("main")
 partePrincipalSite.id = "partePrincipal"
+
+let tituloSite = document.createElement("h1")
+tituloSite.innerHTML = "Virtual Market" 
+partePrincipalSite.appendChild(tituloSite)
+
+let divItemValor = document.createElement("div")
+let itemDiv = document.createElement("span")
+let valorDiv = document.createElement("span")
+itemDiv.innerHTML = "Item"
+valorDiv.innerHTML = "Valor"
+divItemValor.appendChild(itemDiv)
+divItemValor.appendChild(valorDiv)
+partePrincipalSite.appendChild(divItemValor)
+
 let products = []
 
 function createProduct(imageProduct, idProduct, nameProduct, priceProduct){
@@ -26,17 +40,17 @@ createProduct("./assets/img/pastel.png", 8, "Pastel de Carne", "5.00")
 createProduct("./assets/img/pimenta.jpg", 9, "Pimenta", "0.50")
 createProduct("./assets/img/tomatecomum.jpg", 10, "Tomate Comum", "1.20")
 
-let ulProducts = document.createElement("ul")
+let productList  = document.createElement("ul")
 
 function listarProdutos(listaProdutos){
     for(let i = 0; i<listaProdutos.length; i++){
        let produto = listaProdutos[i]
        let cardProduto   = criarCardProduto(produto)
        if(listaProdutos == products){
-        ulProducts.appendChild(cardProduto)
+        productList.appendChild(cardProduto)
        }
    }
-   partePrincipalSite.appendChild(ulProducts)
+   partePrincipalSite.appendChild(productList)
    corpoSite.appendChild(partePrincipalSite)
 }
 listarProdutos(products)
@@ -47,20 +61,47 @@ function criarCardProduto(produto){
     let nomeCard          = produto.name
     let valorCard         = produto.price
 
-    let tagLi       = document.createElement("li")
+    let productDetails       = document.createElement("li")
     let tagImge     = document.createElement("img")
     let tagNome     = document.createElement("h2")
     let tagPreco    = document.createElement("span")
 
-    tagLi.id             = idCard
+    productDetails.id    = idCard
     tagImge.src          = imagemCard
     tagImge.alt          = nomeCard
     tagNome.innerText    = nomeCard
     tagPreco.innerText   = valorCard
 
-    tagLi.appendChild(tagImge)
-    tagLi.appendChild(tagNome)
-    tagLi.appendChild(tagPreco)
+    productDetails.appendChild(tagImge)
+    productDetails.appendChild(tagNome)
+    productDetails.appendChild(tagPreco)
 
-    return tagLi
+    return productDetails
 }
+
+function soma(products){
+  
+    let total = 0
+    for (let i = 0; i <products.length; i++) {
+        let precoProduto = products[i].price
+        let x = parseFloat(precoProduto)
+        total += x
+    }
+
+    return total.toFixed(2)
+}
+
+let valorFinal = soma(products)
+
+let divTotal = document.createElement("div")
+let totalTexto = document.createElement("p")
+let totalValor = document.createElement("p")
+totalTexto.innerHTML = "Total"
+totalValor.innerHTML = `R$ ${valorFinal}`
+divTotal.appendChild(totalTexto)
+divTotal.appendChild(totalValor)
+partePrincipalSite.appendChild(divTotal)
+
+let buttonEnd = document.createElement("button")
+buttonEnd.innerHTML = "Finalizar Compra"
+partePrincipalSite.appendChild(buttonEnd)
