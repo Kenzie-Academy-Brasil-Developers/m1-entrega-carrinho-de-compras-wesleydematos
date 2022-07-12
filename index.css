@@ -70,3 +70,11 @@ main ul li span{
     border: 1px solid #ffffff;
     border-radius: 6px;
 }
+
+section h2{
+    text-align: center;
+    color: #ffffff;
+    background-color: #212529;
+    margin-top: 10px;
+    font-size: 40px;
+}
