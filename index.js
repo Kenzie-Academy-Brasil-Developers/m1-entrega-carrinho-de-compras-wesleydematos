@@ -108,3 +108,11 @@ partePrincipalSite.appendChild(divTotal)
 let buttonEnd = document.createElement("button")
 buttonEnd.innerHTML = "Finalizar Compra"
 partePrincipalSite.appendChild(buttonEnd)
+
+partePrincipalSite.addEventListener("click", function(event){
+    let localClick = event.target
+   
+    if(localClick.tagName == "BUTTON"){
+        alert("Compra efetuada com sucesso!")
+    }
+})
